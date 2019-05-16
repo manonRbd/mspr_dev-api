@@ -12,17 +12,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 public class ApiApplication {
-
-	@Configuration
-	static class GlobalSecurityConfig extends GlobalAuthenticationConfigurerAdapter {
-		@Override
-		public void init( AuthenticationManagerBuilder auth ) throws Exception {
-			PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-			auth.inMemoryAuthentication()
-					.withUser( "app" ).password( encoder.encode( "9v9uf68k" ) ).roles( "USER" );
-		}
-	}
-
 	@Configuration
 	static class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		@Override
