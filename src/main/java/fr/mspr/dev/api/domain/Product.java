@@ -1,7 +1,11 @@
 package fr.mspr.dev.api.domain;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -9,12 +13,15 @@ import java.util.Set;
 public class Product implements Serializable {
 
     @Id
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(columnDefinition = "BINARY(36)")
     private String uuid;
     private String name;
     private Boolean generic;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private Set<Sales> sales;
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Sale> sales;
 
     public Product() {
     }

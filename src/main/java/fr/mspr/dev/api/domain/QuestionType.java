@@ -1,5 +1,8 @@
 package fr.mspr.dev.api.domain;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -9,6 +12,9 @@ import java.util.List;
 public class QuestionType implements Serializable {
 
     @Id
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(columnDefinition = "BINARY(36)")
     private String uuid;
     private String name;
 
