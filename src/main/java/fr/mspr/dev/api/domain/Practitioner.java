@@ -1,7 +1,6 @@
 package fr.mspr.dev.api.domain;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -22,7 +21,7 @@ public class Practitioner implements Serializable {
     private String companyName;
     private String address;
 
-    @Length(min = 5, max = 5)
+    @Column(columnDefinition = "VARCHAR(5)")
     private String postcode;
     private String city;
     private Float latitude;
