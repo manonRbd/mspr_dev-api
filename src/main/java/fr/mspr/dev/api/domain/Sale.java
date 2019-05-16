@@ -67,5 +67,9 @@ public class Sale implements Serializable {
     public void setQuantity(Float quantity) {
         this.quantity = quantity;
     }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 }
 

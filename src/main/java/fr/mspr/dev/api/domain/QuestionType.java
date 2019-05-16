@@ -39,4 +39,12 @@ public class QuestionType implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
+    public List<Question> getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(List<Question> question) {
+        this.question = question;
+    }
 }

@@ -81,4 +81,48 @@ public class Practitioner implements Serializable {
     public void setSales(List<Sale> sales) {
         this.sales = sales;
     }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public Float getLatitude() {
+        return latitude;
+    }
+
+    public Float getLongitude() {
+        return longitude;
+    }
+
+    public PractitionerType getPractitionerType() {
+        return practitionerType;
+    }
+
+    public List<Sale> getSales() {
+        return sales;
+    }
 }

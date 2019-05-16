@@ -48,5 +48,13 @@ public class Form implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public List<Question> getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(List<Question> question) {
+        this.question = question;
+    }
 }
 

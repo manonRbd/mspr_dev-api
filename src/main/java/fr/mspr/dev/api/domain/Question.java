@@ -56,4 +56,28 @@ public class Question implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public List<QuestionChoice> getQuestionChoice() {
+        return questionChoice;
+    }
+
+    public void setQuestionChoice(List<QuestionChoice> questionChoice) {
+        this.questionChoice = questionChoice;
+    }
+
+    public QuestionType getQuestionType() {
+        return questionType;
+    }
+
+    public void setQuestionType(QuestionType questionType) {
+        this.questionType = questionType;
+    }
+
+    public Form getForm() {
+        return form;
+    }
+
+    public void setForm(Form form) {
+        this.form = form;
+    }
 }

@@ -49,4 +49,12 @@ public class Product implements Serializable {
     public void setGeneric(Boolean generic) {
         this.generic = generic;
     }
+
+    public List<Sale> getSales() {
+        return sales;
+    }
+
+    public void setSales(List<Sale> sales) {
+        this.sales = sales;
+    }
 }

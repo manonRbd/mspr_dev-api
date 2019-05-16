@@ -39,4 +39,12 @@ public class PractitionerType implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
+    public List<Practitioner> getPractitionerList() {
+        return practitionerList;
+    }
+
+    public void setPractitionerList(List<Practitioner> practitionerList) {
+        this.practitionerList = practitionerList;
+    }
 }
