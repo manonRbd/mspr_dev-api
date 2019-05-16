@@ -27,12 +27,30 @@ public class Sale implements Serializable {
     private Product product;
 
     private Date date;
-    private Number quantity;
+    private Float quantity;
 
     public Sale() {
     }
 
+    public String getUuid() {
+        return uuid;
+    }
 
+    public Practitioner getPractitioner() {
+        return practitioner;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public Float getQuantity() {
+        return quantity;
+    }
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
@@ -46,7 +64,7 @@ public class Sale implements Serializable {
         this.product = product;
     }
 
-    public void setQuantity(Number quantity) {
+    public void setQuantity(Float quantity) {
         this.quantity = quantity;
     }
 }
