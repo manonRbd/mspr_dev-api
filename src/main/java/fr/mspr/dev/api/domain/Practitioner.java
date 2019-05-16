@@ -16,19 +16,32 @@ public class Practitioner implements Serializable {
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column(columnDefinition = "BINARY(36)")
     private String uuid;
+
+    @Column(nullable = false)
     private String firstname;
+
+    @Column(nullable = false)
     private String lastname;
+
     private String companyName;
+
+    @Column(nullable = false)
     private String address;
 
-    @Column(columnDefinition = "VARCHAR(5)")
+    @Column(columnDefinition = "VARCHAR(5)", nullable = false)
     private String postcode;
+
+    @Column(nullable = false)
     private String city;
+
+    @Column(nullable = false)
     private Float latitude;
+
+    @Column(nullable = false)
     private Float longitude;
 
     @ManyToOne
-    @JoinColumn(name = "uuid_practitionerType")
+    @JoinColumn(name = "uuid_practitionerType", nullable = false)
     private PractitionerType practitionerType;
 
     @OneToMany(mappedBy = "practitioner", fetch = FetchType.EAGER, cascade = CascadeType.ALL)

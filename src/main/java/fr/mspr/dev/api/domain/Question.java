@@ -15,18 +15,22 @@ public class Question implements Serializable {
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column(columnDefinition = "BINARY(36)")
     private String uuid;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String description;
 
     @OneToMany(mappedBy = "question", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<QuestionChoice> questionChoice;
 
     @ManyToOne
-    @JoinColumn(name = "uuid_questionType")
+    @JoinColumn(name = "uuid_questionType", nullable = false)
     private QuestionType questionType;
 
     @ManyToOne
-    @JoinColumn(name = "uuid_form")
+    @JoinColumn(name = "uuid_form", nullable = false)
     private Form form;
 
     public Question() {

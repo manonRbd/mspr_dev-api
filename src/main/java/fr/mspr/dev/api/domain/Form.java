@@ -15,7 +15,11 @@ public class Form implements Serializable {
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column(columnDefinition = "BINARY(36)")
     private String uuid;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String description;
 
     @OneToMany(mappedBy = "form", fetch = FetchType.EAGER, cascade = CascadeType.ALL)

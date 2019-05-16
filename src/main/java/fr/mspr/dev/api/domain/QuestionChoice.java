@@ -14,10 +14,12 @@ public class QuestionChoice implements Serializable {
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column(columnDefinition = "BINARY(36)")
     private String uuid;
+
+    @Column(nullable = false)
     private String value;
 
     @ManyToOne
-    @JoinColumn(name = "uuid_question")
+    @JoinColumn(name = "uuid_question", nullable = false)
     private Question question;
 
     public QuestionChoice() {

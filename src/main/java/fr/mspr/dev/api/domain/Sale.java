@@ -18,14 +18,17 @@ public class Sale implements Serializable {
     private String uuid;
 
     @ManyToOne
-    @JoinColumn(name = "uuid_practitioner")
+    @JoinColumn(name = "uuid_practitioner", nullable = false)
     private Practitioner practitioner;
 
     @ManyToOne
-    @JoinColumn(name = "uuid_product")
+    @JoinColumn(name = "uuid_product", nullable = false)
     private Product product;
 
+    @Column(nullable = false)
     private Date date;
+
+    @Column(nullable = false)
     private Float quantity;
 
     public Sale() {

@@ -15,6 +15,8 @@ public class QuestionType implements Serializable {
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column(columnDefinition = "BINARY(36)")
     private String uuid;
+
+    @Column(nullable = false)
     private String name;
 
     @OneToMany(mappedBy = "questionType", fetch = FetchType.EAGER, cascade = CascadeType.ALL)

@@ -15,6 +15,8 @@ public class PractitionerType implements Serializable {
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column(columnDefinition = "BINARY(36)")
     private String uuid;
+
+    @Column(nullable = false)
     private String name;
 
     @OneToMany(mappedBy = "practitionerType", fetch = FetchType.EAGER, cascade = CascadeType.ALL)

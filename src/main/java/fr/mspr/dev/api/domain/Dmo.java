@@ -14,9 +14,17 @@ public class Dmo implements Serializable {
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column(columnDefinition = "BINARY(36)")
     private String uuid;
+
+    @Column(nullable = false)
     private String firstname;
+
+    @Column(nullable = false)
     private String lastname;
+
+    @Column(nullable = false)
     private String login;
+
+    @Column(nullable = false)
     private String password;
 
     public Dmo() {
