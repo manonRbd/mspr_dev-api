@@ -19,26 +19,30 @@ public class QuestionChoice implements Serializable {
     private String value;
 
     @ManyToOne
-    @JoinColumn(name = "uuid_question", nullable = false)
+    @JoinColumn(name = "uuid_question", nullable = false, updatable=false, insertable = false)
     private Question question;
 
+    @Column(nullable = false)
+    private String uuid_question;
+
     public QuestionChoice() {
+    }
+
+    public String getUuid_question() {
+        return uuid_question;
+    }
+
+    public void setUuid_question(String uuid_question) {
+        this.uuid_question = uuid_question;
     }
 
     public String getUuid() {
         return uuid;
     }
 
-    public String getName() {
-        return value;
-    }
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
-    }
-
-    public void setName(String value) {
-        this.value = value;
     }
 
     public String getValue() {

@@ -41,13 +41,24 @@ public class Practitioner implements Serializable {
     private Float longitude;
 
     @ManyToOne
-    @JoinColumn(name = "uuid_practitionerType", nullable = false)
+    @JoinColumn(name = "uuid_practitionerType", nullable = false, updatable=false, insertable = false)
     private PractitionerType practitionerType;
+
+    @Column(nullable = false)
+    private String uuid_practitionerType;
 
     @OneToMany(mappedBy = "practitioner", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Sale> sales;
 
     public Practitioner() {
+    }
+
+    public String getUuid_practitionerType() {
+        return uuid_practitionerType;
+    }
+
+    public void setUuid_practitionerType(String uuid_practitionerType) {
+        this.uuid_practitionerType = uuid_practitionerType;
     }
 
     public void setUuid(String uuid) {

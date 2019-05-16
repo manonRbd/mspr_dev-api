@@ -18,12 +18,18 @@ public class Sale implements Serializable {
     private String uuid;
 
     @ManyToOne
-    @JoinColumn(name = "uuid_practitioner", nullable = false)
+    @JoinColumn(name = "uuid_practitioner", nullable = false, updatable=false, insertable = false)
     private Practitioner practitioner;
 
+    @Column(nullable = false)
+    private String uuid_practitioner;
+
     @ManyToOne
-    @JoinColumn(name = "uuid_product", nullable = false)
+    @JoinColumn(name = "uuid_product", nullable = false, updatable=false, insertable = false)
     private Product product;
+
+    @Column(nullable = false)
+    private String uuid_product;
 
     @Column(nullable = false)
     private Date date;
@@ -32,6 +38,22 @@ public class Sale implements Serializable {
     private Float quantity;
 
     public Sale() {
+    }
+
+    public String getUuid_practitioner() {
+        return uuid_practitioner;
+    }
+
+    public void setUuid_practitioner(String uuid_practitioner) {
+        this.uuid_practitioner = uuid_practitioner;
+    }
+
+    public String getUuid_product() {
+        return uuid_product;
+    }
+
+    public void setUuid_product(String uuid_product) {
+        this.uuid_product = uuid_product;
     }
 
     public String getUuid() {
