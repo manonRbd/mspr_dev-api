@@ -14,7 +14,7 @@ public class Practitioner implements Serializable {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(columnDefinition = "BINARY(36)")
+    @Column(columnDefinition = "VARCHAR(36)")
     private String uuid;
 
     @Column(nullable = false)
