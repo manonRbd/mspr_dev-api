@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin(origins = "*")
 public interface IDmoRepository extends CrudRepository<Dmo, String> {
 
-    public Boolean findByLoginAndPassword(@Param("email") String email, @Param("password") String password);
+    public Dmo findByLoginAndPassword(@Param("email") String email, @Param("password") String password);
 }
