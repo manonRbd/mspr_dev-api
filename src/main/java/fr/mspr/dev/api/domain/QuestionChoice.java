@@ -18,22 +18,11 @@ public class QuestionChoice implements Serializable {
     @Column(nullable = false)
     private String value;
 
-    @ManyToOne
-    @JoinColumn(name = "uuid_question", nullable = false, updatable=false, insertable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "uuid_question")
     private Question question;
 
-    @Column(nullable = false)
-    private String uuid_question;
-
     public QuestionChoice() {
-    }
-
-    public String getUuid_question() {
-        return uuid_question;
-    }
-
-    public void setUuid_question(String uuid_question) {
-        this.uuid_question = uuid_question;
     }
 
     public String getUuid() {

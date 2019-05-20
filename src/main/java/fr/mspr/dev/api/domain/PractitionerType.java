@@ -19,7 +19,7 @@ public class PractitionerType implements Serializable {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "practitionerType", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "practitionerType", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Practitioner> practitionerList;
 
     public PractitionerType() {
@@ -48,4 +48,6 @@ public class PractitionerType implements Serializable {
     public void setPractitionerList(List<Practitioner> practitionerList) {
         this.practitionerList = practitionerList;
     }
+
+
 }

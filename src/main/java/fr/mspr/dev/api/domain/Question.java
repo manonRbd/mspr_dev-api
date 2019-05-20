@@ -25,37 +25,15 @@ public class Question implements Serializable {
     @OneToMany(mappedBy = "question", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<QuestionChoice> questionChoice;
 
-    @ManyToOne
-    @JoinColumn(name = "uuid_questionType", nullable = false, updatable=false, insertable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "uuid_questionType")
     private QuestionType questionType;
 
-    @Column(nullable = false)
-    private String uuid_questionType;
-
-    @ManyToOne
-    @JoinColumn(name = "uuid_form", nullable = false, updatable=false, insertable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "uuid_form")
     private Form form;
 
-    @Column(nullable = false)
-    private String uuid_form;
-
     public Question() {
-    }
-
-    public String getUuid_questionType() {
-        return uuid_questionType;
-    }
-
-    public void setUuid_questionType(String uuid_questionType) {
-        this.uuid_questionType = uuid_questionType;
-    }
-
-    public String getUuid_form() {
-        return uuid_form;
-    }
-
-    public void setUuid_form(String uuid_form) {
-        this.uuid_form = uuid_form;
     }
 
     public String getUuid() {
