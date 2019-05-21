@@ -40,8 +40,8 @@ public class Practitioner implements Serializable {
     @Column(nullable = false)
     private Float longitude;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "uuid_practitionerType")
+    @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "ENUM('GENERALISTE', 'PHARMACIE', 'SPECIALISTE')")
     private PractitionerType practitionerType;
 
     @OneToMany(mappedBy = "practitioner", fetch = FetchType.EAGER, cascade = CascadeType.ALL)

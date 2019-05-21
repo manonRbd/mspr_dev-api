@@ -22,12 +22,12 @@ public class Question implements Serializable {
     @Column(nullable = false)
     private String description;
 
-    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<QuestionChoice> questionChoice;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "uuid_questionType")
+    @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "ENUM('MULTIPLE', 'UNIQUE', 'FREE')")
     private QuestionType questionType;
+
+    @Column(columnDefinition = "TEXT")
+    private String options;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "uuid_form")
@@ -60,14 +60,6 @@ public class Question implements Serializable {
         this.description = description;
     }
 
-    public List<QuestionChoice> getQuestionChoice() {
-        return questionChoice;
-    }
-
-    public void setQuestionChoice(List<QuestionChoice> questionChoice) {
-        this.questionChoice = questionChoice;
-    }
-
     public QuestionType getQuestionType() {
         return questionType;
     }
@@ -82,5 +74,13 @@ public class Question implements Serializable {
 
     public void setForm(Form form) {
         this.form = form;
+    }
+
+    public String getOptions() {
+        return options;
+    }
+
+    public void setOptions(String options) {
+        this.options = options;
     }
 }
