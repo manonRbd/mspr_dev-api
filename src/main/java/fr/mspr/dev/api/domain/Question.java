@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "question")
@@ -32,6 +33,9 @@ public class Question implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "uuid_form")
     private Form form;
+
+    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Answer> answers;
 
     public Question() {
     }
@@ -82,5 +86,13 @@ public class Question implements Serializable {
 
     public void setOptions(String options) {
         this.options = options;
+    }
+
+    public Set<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(Set<Answer> answers) {
+        this.answers = answers;
     }
 }

@@ -45,7 +45,10 @@ public class Practitioner implements Serializable {
     private PractitionerType practitionerType;
 
     @OneToMany(mappedBy = "practitioner", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Sale> sales;
+    private Set<Sale> sales;
+
+    @OneToMany(mappedBy = "practitioner", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Answer> answers;
 
     public Practitioner() {
     }
@@ -90,7 +93,7 @@ public class Practitioner implements Serializable {
         this.practitionerType = practitionerType;
     }
 
-    public void setSales(List<Sale> sales) {
+    public void setSales(Set<Sale> sales) {
         this.sales = sales;
     }
 
@@ -134,7 +137,15 @@ public class Practitioner implements Serializable {
         return practitionerType;
     }
 
-    public List<Sale> getSales() {
+    public Set<Sale> getSales() {
         return sales;
+    }
+
+    public Set<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(Set<Answer> answers) {
+        this.answers = answers;
     }
 }
