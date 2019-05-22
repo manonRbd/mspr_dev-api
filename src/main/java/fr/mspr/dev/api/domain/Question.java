@@ -30,6 +30,9 @@ public class Question implements Serializable {
     @Column(columnDefinition = "TEXT")
     private String options;
 
+    @Column(nullable = false)
+    private Integer position;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "uuid_form")
     private Form form;
@@ -94,5 +97,13 @@ public class Question implements Serializable {
 
     public void setAnswers(Set<Answer> answers) {
         this.answers = answers;
+    }
+
+    public Integer getPosition() {
+        return position;
+    }
+
+    public void setPosition(Integer position) {
+        this.position = position;
     }
 }
