@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 public interface IAnswerRepository extends CrudRepository<Answer, String> {
     Iterable<Answer> findAllByPractitionerUuid(@Param("uuid_practitioner") String uuid_practitioner);
     Iterable<Answer> findAllByQuestionUuid(@Param("uuid_question") String uuid_question);
-    Iterable<Answer> findOneByPractitionerUuidAndQuestionUuid(@Param("uuid_practitioner") String uuid_practitioner, @Param("uuid_question") String uuid_question);
+    Iterable<Answer> findAllByPractitionerUuidAndQuestionUuidOrderByDateResponseDesc(@Param("uuid_practitioner") String uuid_practitioner, @Param("uuid_question") String uuid_question);
 
 }
