@@ -15,9 +15,6 @@
 	<description>API Nivantis</description>
 
 	<packaging>war</packaging>
-	<build>
-		<finalName>nivantis-api</finalName>
-	</build>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -51,6 +48,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>nivantis-api</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
