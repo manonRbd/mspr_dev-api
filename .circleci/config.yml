@@ -40,7 +40,7 @@ jobs:
     - run: mvn package
 
     - store_artifacts:
-        path: target/nivantis-api.war
-        destination: nivantis-api.war
+        path: target/nivantis-api.jar
+        destination: nivantis-api.jar
 
-    - run: scp -o StrictHostKeyChecking=no target/nivantis-api.war java@${NIVANTIS_HOST}:/home/admin/wildfly/standalone/deployments
+    - run: scp -o StrictHostKeyChecking=no target/nivantis-api.jar java@${NIVANTIS_HOST}:/home/admin
