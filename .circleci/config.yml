@@ -43,4 +43,4 @@ jobs:
         path: target/nivantis-api.war
         destination: nivantis-api.war
 
-    - run: scp target/nivantis-api.war java@${NIVANTIS_HOST} /home/admin/wildfly/standalone/deployments
+    - run: scp target/nivantis-api.war java@${NIVANTIS_HOST}:/home/admin/wildfly/standalone/deployments
